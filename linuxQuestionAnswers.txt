@@ -1,0 +1,45 @@
+Q 1. What is linux?
+===> Linux is open source operating system created by Linus Torvalds in 1991.
+
+Q 2. What is the difference between Hard Link & Soft Link?
+===> Hard link or soft link are shortcut links that points the files or directory
+        Hard link : 
+        1. Hard link points to same inode of file or directory
+        2. If we deleted orignal file hard link remains alive can content inside it is not deleted
+        3. If original file is changed then content of hardlink file also gets updated
+        4. Hard links does not work across different file systems or partitions 
+        5. Hard links point directly to the file with same inode (index node) as the original file.
+
+        Soft link:
+        1. Soft link points to the name or path of the original file
+        2. If deleted orignal file soft link also deleted
+        3. If original file is changed then softlink file also change
+        4. Soft links work across different file systems or partitions
+        
+Q 3. What is a Kernel in Linux?
+===> The kernel is the core of the Linux OS that manages hardware resources, memory, processes, file systems, and device control
+
+Q 4. How do you create a user account?
+===> Command to create user is 'sudo useradd username' and to create password of that user 'sudo passwd password'
+
+Q 5. What is the grep command used for in Linux?
+===> The grep command is used for searching a string within file or filtering output of other commands to find and pattern.
+
+Q 6. User creation and groupadding task
+===> Step 1: Create user p1 : sudo useradd p1
+     Step 2: He should be part of 3 groups g1,g2,g3 : sudo usermod -a -G g1,g2,g3 p1
+     Step 3: Set default group to g1 : sudo usermod -g g1 p1
+
+Q 7. Directory cretion and permissions assigning task
+===> Step 1:  Create directory /tmp/bg as root user and create files inside it
+     => sudo mkdir /tmp/bg
+     => cd /tmp/bg
+     => sudo touch file.txt
+
+     Step 2: “abhi” should be the owner of the directory. He should be able to create files and delete files inside the directory and also he should b
+     => sudo chown -R abhi /tmp/bg
+     => chmod -R 777 /tmp/bg
+
+Q 8. You suspect that a particular process is consuming excessive CPU resources on your Linux server. How would you identify and terminate this process?
+===> 1. To identify process use 'top' command and get PID of that process
+     2. To terminate that process use command 'kill PID'
